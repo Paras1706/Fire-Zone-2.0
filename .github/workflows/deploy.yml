@@ -25,9 +25,9 @@ jobs:
       - run: npm run build
         env:
           VITE_API_URL: https://your-backend-api.com/api
-          VITE_ADMIN_PASSWORD: admin
-          VITE_UPI_ID: 
-          VITE_PAYEE_NAME:
+          VITE_ADMIN_PASSWORD: Paras@1318
+          VITE_UPI_ID: paraskhatri383-1@okicici
+          VITE_PAYEE_NAME: Paras Khatri
       
       - uses: actions/upload-pages-artifact@v3
         with:
