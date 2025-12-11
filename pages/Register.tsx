@@ -117,21 +117,29 @@ export const Register: React.FC<RegisterProps> = ({ setPage }) => {
           <form onSubmit={handlePaymentSubmit}>
             <div className="text-center mb-6">
               <h2 className="text-xl font-bold mb-2">Scan & Pay</h2>
-              <p className="text-sm text-gray-400">Scan the QR code below using Google Pay, PhonePe or Paytm.</p>
+              <p className="text-sm text-gray-400">Scan to pay with any UPI app</p>
             </div>
 
             <div className="flex flex-col items-center justify-center mb-6">
               <div className="p-4 bg-white rounded-xl mb-4">
-                 {/* Generating QR code dynamically based on UPI ID */}
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${matchDetails.entryFee}&cu=INR`}
-                  alt="Payment QR Code"
+                  src="/assets/qr-code.png"
+                  alt="Payment QR Code for Paras Khatri"
                   className="w-48 h-48"
+                  onError={(e) => {
+                    // Fallback to dynamic QR code if local image fails
+                    const target = e.target as HTMLImageElement;
+                    target.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${matchDetails.entryFee}&cu=INR`;
+                  }}
                 />
               </div>
               <div className="bg-gray-800 px-4 py-2 rounded-lg flex flex-col items-center">
                 <span className="text-xs text-gray-400">UPI ID</span>
                 <span className="font-mono text-neon-blue select-all">{UPI_ID}</span>
+              </div>
+              <div className="bg-gray-800 px-4 py-2 rounded-lg flex flex-col items-center mt-2">
+                <span className="text-xs text-gray-400">Payee Name</span>
+                <span className="font-mono text-neon-blue select-all">{PAYEE_NAME}</span>
               </div>
             </div>
 
