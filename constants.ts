@@ -13,6 +13,7 @@ export const INITIAL_MATCH_DETAILS: MatchDetails = {
   isRoomVisible: false
 };
 
-export const ADMIN_PASSWORD = 'Paras@1318';
-export const UPI_ID = 'paraskhatri383-1@okicici';
-export const PAYEE_NAME = 'Paras Khatri';
+// Load sensitive data from environment variables
+export const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin';
+export const UPI_ID = import.meta.env.VITE_UPI_ID || '';
+export const PAYEE_NAME = import.meta.env.VITE_PAYEE_NAME || '';
