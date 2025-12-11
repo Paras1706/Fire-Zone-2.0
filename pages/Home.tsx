@@ -95,7 +95,7 @@ export const Home: React.FC<HomeProps> = ({ setPage }) => {
             <Clock className="mr-3" /> Match Schedule
           </h2>
           <NeonCard className="h-full">
-            <div className="flex flex-col justify-between h-full space-y-4">
+            <div className="space-y-4">
               <div className="flex justify-between items-center border-b border-gray-800 pb-3">
                 <span className="text-gray-400">Date</span>
                 <span className="font-bold">{matchDetails.date}</span>
@@ -103,17 +103,6 @@ export const Home: React.FC<HomeProps> = ({ setPage }) => {
               <div className="flex justify-between items-center border-b border-gray-800 pb-3">
                 <span className="text-gray-400">Map</span>
                 <span className="font-bold">{matchDetails.map}</span>
-              </div>
-              <div className="flex justify-between items-center border-b border-gray-800 pb-3">
-                <span className="text-gray-400">Room ID</span>
-                <span className="text-neon-purple font-mono">
-                  {matchDetails.isRoomVisible ? matchDetails.roomId : 'Locked 🔒'}
-                </span>
-              </div>
-              <div className="pt-2">
-                 <p className="text-xs text-gray-500 italic">
-                   Room ID and Password will be shared 15 minutes before the match start time on the Match Info page.
-                 </p>
               </div>
             </div>
           </NeonCard>
