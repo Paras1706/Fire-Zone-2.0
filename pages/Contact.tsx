@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
              Get instant replies for payment issues or room details.
            </p>
            <a 
-             href="https://wa.me/919876543210" // Replace with actual number
+             href="https://wa.me/917495001225" 
              target="_blank" 
              rel="noopener noreferrer"
              className="w-full"
@@ -40,7 +40,7 @@ export const Contact: React.FC = () => {
            <p className="text-gray-400 text-sm mb-6">
              Send us detailed queries regarding partnership or bans.
            </p>
-           <a href="mailto:support@firezone.com" className="w-full">
+           <a href="mailto:fftournament365@gmail.com" className="w-full">
              <NeonButton variant="secondary" fullWidth>
                Send Email
              </NeonButton>
