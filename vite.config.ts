@@ -5,14 +5,20 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      base: '/Fire-Zone-2.0/',
       server: {
         port: 3000,
-        host: '0.0.0.0',
+        host: '127.0.0.1',
+      },
+      build: {
+        outDir: 'dist',
+        sourcemap: false,
       },
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+        'import.meta.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL || 'http://localhost:5000/api')
       },
       resolve: {
         alias: {
