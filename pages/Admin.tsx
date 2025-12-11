@@ -146,6 +146,20 @@ export const Admin: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-4">
             <NeonInput
+              label="Prize Pool"
+              value={matchDetails.prizePool}
+              onChange={(e) => updateMatchDetails({ prizePool: e.target.value })}
+              placeholder="e.g. 50000"
+            />
+            <NeonInput
+              label="Entry Fee"
+              value={matchDetails.entryFee}
+              onChange={(e) => updateMatchDetails({ entryFee: e.target.value })}
+              placeholder="e.g. 100"
+            />
+          </div>
+          <div className="space-y-4">
+            <NeonInput
               label="Room ID"
               value={matchDetails.roomId}
               onChange={(e) => updateMatchDetails({ roomId: e.target.value })}
@@ -158,6 +172,8 @@ export const Admin: React.FC = () => {
               placeholder="e.g. 1234"
             />
           </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
           <div className="space-y-4">
             <NeonInput
               label="Match Date"
@@ -165,7 +181,9 @@ export const Admin: React.FC = () => {
               onChange={(e) => updateMatchDetails({ date: e.target.value })}
               type="date"
             />
-             <NeonInput
+          </div>
+          <div className="space-y-4">
+            <NeonInput
               label="Match Time"
               value={matchDetails.time}
               onChange={(e) => updateMatchDetails({ time: e.target.value })}
