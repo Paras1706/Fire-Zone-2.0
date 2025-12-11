@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => {
         'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.VITE_GEMINI_API_KEY),
         'import.meta.env.VITE_API_URL': JSON.stringify(env.VITE_API_URL || 'http://localhost:5000/api'),
-        'import.meta.env.VITE_ADMIN_PASSWORD': JSON.stringify(env.VITE_ADMIN_PASSWORD || 'admin'),
+        'import.meta.env.VITE_ADMIN_PASSWORD': JSON.stringify(env.VITE_ADMIN_PASSWORD || 'Paras@1318'),
         'import.meta.env.VITE_UPI_ID': JSON.stringify(env.VITE_UPI_ID || ''),
         'import.meta.env.VITE_PAYEE_NAME': JSON.stringify(env.VITE_PAYEE_NAME || ''),
         'import.meta.env.PROD': JSON.stringify(mode === 'production')
